@@ -1223,6 +1223,14 @@ pre .javascript .function {
     word-break: break-word;
   }
 }
+.post-body p a {
+  color: #0593d3;
+  border-bottom: none;
+}
+.post-body p a:hover {
+  color: #0477ab;
+  text-decoration: underline;
+}
 .post-body .fancybox img {
   display: block !important;
   margin: 0 auto;
@@ -1939,7 +1947,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #30250d;
+  background: #ffc2e2;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3236,4 +3244,7 @@ pre .javascript .function {
   .pagination {
     margin: 8px 0 0;
   }
+}
+.post-toc .nav .nav-child {
+  display: block;
 }
