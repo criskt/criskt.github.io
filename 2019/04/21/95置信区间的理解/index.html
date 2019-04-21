@@ -79,17 +79,19 @@
 
 
 
-<meta name="description" content="this page show some tags..">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta name="description" content="估计又分为“点估计”和“区间估计”，他们之间的区别作者用了一个特别易懂的例子，如果你研究平均一个美国人一生中要得到多少交通罚单，报告研究结果的方法有两种：“10个罚单”或者“8-12个罚单”，而10就是对总体均值的点估计，8-12就是对总体参数的区间估计。而区间估计又称为置信区间估计，要得到一个置信区间需要样本统计量（比如均值）和从数据中计算出的抽样误差，这里的抽样误差可以简单的理解为与标准误有关">
+<meta property="og:type" content="article">
+<meta property="og:title" content="95置信区间的理解">
+<meta property="og:url" content="http://yoursite.com/2019/04/21/95置信区间的理解/index.html">
 <meta property="og:site_name" content="不说 · Blog">
-<meta property="og:description" content="this page show some tags..">
+<meta property="og:description" content="估计又分为“点估计”和“区间估计”，他们之间的区别作者用了一个特别易懂的例子，如果你研究平均一个美国人一生中要得到多少交通罚单，报告研究结果的方法有两种：“10个罚单”或者“8-12个罚单”，而10就是对总体均值的点估计，8-12就是对总体参数的区间估计。而区间估计又称为置信区间估计，要得到一个置信区间需要样本统计量（比如均值）和从数据中计算出的抽样误差，这里的抽样误差可以简单的理解为与标准误有关">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-20T15:29:32.023Z">
+<meta property="og:image" content="http://yoursite.com/images/pasted-2.png">
+<meta property="og:updated_time" content="2019-04-21T12:31:11.134Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="this page show some tags..">
+<meta name="twitter:title" content="95置信区间的理解">
+<meta name="twitter:description" content="估计又分为“点估计”和“区间估计”，他们之间的区别作者用了一个特别易懂的例子，如果你研究平均一个美国人一生中要得到多少交通罚单，报告研究结果的方法有两种：“10个罚单”或者“8-12个罚单”，而10就是对总体均值的点估计，8-12就是对总体参数的区间估计。而区间估计又称为置信区间估计，要得到一个置信区间需要样本统计量（比如均值）和从数据中计算出的抽样误差，这里的抽样误差可以简单的理解为与标准误有关">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-2.png">
 
 
 
@@ -119,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/">
+  <link rel="canonical" href="http://yoursite.com/2019/04/21/95置信区间的理解/">
 
 
 
 
 
-  <title>tags | 不说 · Blog</title>
+  <title>95置信区间的理解 | 不说 · Blog</title>
   
 
 
@@ -260,40 +262,189 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/21/95置信区间的理解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="不说">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/upload/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不说 · Blog">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">tags</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                目前共计 1 个标签
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/演说词/" style="font-size: 12px; color: #ccc">演说词</a>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">95置信区间的理解</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-21T19:57:00+08:00">
+                2019-04-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/21/95置信区间的理解/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/04/21/95置信区间的理解/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>估计又分为“点估计”和“区间估计”，他们之间的区别作者用了一个特别易懂的例子，如果你研究平均一个美国人一生中要得到多少交通罚单，报告研究结果的方法有两种：“10个罚单”或者“8-12个罚单”，而10就是对总体均值的点估计，8-12就是对总体参数的区间估计。而区间估计又称为置信区间估计，要得到一个置信区间需要样本统计量（比如均值）和从数据中计算出的抽样误差，这里的抽样误差可以简单的理解为与标准误有关的数值，这么说是因为置信区间收到置信水平和样本分布的影响。如果是z分布，即标准整体分布，在95%置信水平下则置信区间为：均值±1.96×标准误，1.96就是z标准正态分布中覆盖95%概率面积的端点的绝对值。</p>
+<p>需要进一步理解的是：假设现在是95%的置信水平，每个从总体中抽出的样本都可以求出一个95%的置信区间，且不同样本求出的置信区间是不同的，但随着抽出的样本次数的增加，例如抽100次，得到100个样本，每个样本都对应一个置信区间，那么100次抽样求出的100个置信区间有95个包含真实的总体均值。换成一次抽样可以理解为：我们有95%的信心在有一次抽样得到的样本计算出的95%的置信区间内包括均值。</p>
+<p>总结来说，置信区间会因样本的不同而不同，而且不是所有的区间都包含真值，一个区间就像是一个为了捕获总体未知参数而撒出的网，不是所有撒网的地点都能捕获我们想要的总体的参数。</p>
+<p>简单来说，95置信区间就是：均值±1.96×标准误。而1.96的来源是依据正态分布</p>
+<p>$$P(\hat{\mu}-1.96\frac{\sigma}{\sqrt{n}} \leq M \leq \hat{\mu} + 1.96\frac{\sigma}{\sqrt{n}})\approx0.95$$</p>
+<p>我们以$1.96\frac{\sigma}{\sqrt{n}}$为半径做区间，就构造出了95%执行区间。</p>
+<p><img src="/images/pasted-2.png" alt="upload successful"></p>
+<p>反过来，若某均值在95置信区间之外，则说明二者在统计学意义下有显著性差异。</p>
+
       
     </div>
     
     
     
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Donate comment here</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/reward_pic/wechatpay.jpg" alt="不说 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/reward_pic/alipay.jpg" alt="不说 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/21/没有生活，哪来陈词？/" rel="next" title="没有生活，哪来陈词？">
+                <i class="fa fa-chevron-left"></i> 没有生活，哪来陈词？
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -302,6 +453,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -568,6 +733,18 @@
       <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2019/04/21/95置信区间的理解/';
+          this.page.identifier = '2019/04/21/95置信区间的理解/';
+          this.page.title = '95置信区间的理解';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
