@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="相关, spss,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="相关性分析以及偏相关分析的数学模型及spss应用 一、先来看相关度（双变量）（1）正相关：如果x,y变化的方向一致，如身高与体重的关系，r&amp;gt;0；一般地， ​        · |r|&amp;gt;0.95 存在显著性相关； ​        · |r|≥0.8 高度相关； ​        · 0.5≤|r|&amp;lt;0.8 中度相关； ​        · 0.3≤|r|&amp;lt;0.5 低度相关；">
+<meta name="keywords" content="相关, spss">
+<meta property="og:type" content="article">
+<meta property="og:title" content="相关性分析以及偏相关分析的数学模型及spss应用">
+<meta property="og:url" content="http://yoursite.com/2019/06/06/相关分析以及偏相关分析的数学模型及SPSS应用/index.html">
+<meta property="og:site_name" content="不说 · Blog">
+<meta property="og:description" content="相关性分析以及偏相关分析的数学模型及spss应用 一、先来看相关度（双变量）（1）正相关：如果x,y变化的方向一致，如身高与体重的关系，r&amp;gt;0；一般地， ​        · |r|&amp;gt;0.95 存在显著性相关； ​        · |r|≥0.8 高度相关； ​        · 0.5≤|r|&amp;lt;0.8 中度相关； ​        · 0.3≤|r|&amp;lt;0.5 低度相关；">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2019/06/06/相关分析以及偏相关分析的数学模型及SPSS应用/1559998024122.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/06/相关分析以及偏相关分析的数学模型及SPSS应用/1559998038567.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/06/相关分析以及偏相关分析的数学模型及SPSS应用/1559998056116.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/06/相关分析以及偏相关分析的数学模型及SPSS应用/1559998069827.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/06/相关分析以及偏相关分析的数学模型及SPSS应用/1559998082865.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/06/相关分析以及偏相关分析的数学模型及SPSS应用/1559998091912.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/06/相关分析以及偏相关分析的数学模型及SPSS应用/1559998105692.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/06/相关分析以及偏相关分析的数学模型及SPSS应用/1559998115773.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/06/相关分析以及偏相关分析的数学模型及SPSS应用/1559998125942.png">
+<meta property="og:updated_time" content="2019-06-08T16:52:05.286Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="相关性分析以及偏相关分析的数学模型及spss应用">
+<meta name="twitter:description" content="相关性分析以及偏相关分析的数学模型及spss应用 一、先来看相关度（双变量）（1）正相关：如果x,y变化的方向一致，如身高与体重的关系，r&amp;gt;0；一般地， ​        · |r|&amp;gt;0.95 存在显著性相关； ​        · |r|≥0.8 高度相关； ​        · 0.5≤|r|&amp;lt;0.8 中度相关； ​        · 0.3≤|r|&amp;lt;0.5 低度相关；">
+<meta name="twitter:image" content="http://yoursite.com/2019/06/06/相关分析以及偏相关分析的数学模型及SPSS应用/1559998024122.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/06/06/相关分析以及偏相关分析的数学模型及SPSS应用/">
+
+
+
+
+
+  <title>相关性分析以及偏相关分析的数学模型及spss应用 | 不说 · Blog</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f58d624f18cbd91beca33213279a5cf3";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">不说 · Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Now I have come to the crossroads in my life. I always knew what the right path was. Without exception, Iknew. But I never took it,you knew why? It was too damn hard!         —— 《闻香识女人》</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/06/相关分析以及偏相关分析的数学模型及SPSS应用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="不说">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/upload/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不说 · Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">相关性分析以及偏相关分析的数学模型及spss应用</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-06T00:00:00+08:00">
+                2019-06-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/统计分析/" itemprop="url" rel="index">
+                    <span itemprop="name">统计分析</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/06/06/相关分析以及偏相关分析的数学模型及SPSS应用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/06/06/相关分析以及偏相关分析的数学模型及SPSS应用/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>相关性分析以及偏相关分析的数学模型及spss应用</p>
+<h4 id="一、先来看相关度（双变量）"><a href="#一、先来看相关度（双变量）" class="headerlink" title="一、先来看相关度（双变量）"></a>一、先来看相关度（双变量）</h4><p>（1）正相关：如果x,y变化的方向一致，如身高与体重的关系，r&gt;0；一般地，</p>
+<p>​        · |r|&gt;0.95 存在显著性相关；</p>
+<p>​        · |r|≥0.8 高度相关；</p>
+<p>​        · 0.5≤|r|&lt;0.8 中度相关；</p>
+<p>​        · 0.3≤|r|&lt;0.5 低度相关；</p>
+<p>​        · |r|&lt;0.3 关系极弱，认为不相关</p>
+<p>（2）负相关：如果x,y变化的方向相反，如吸烟与肺功能的关系，r&lt;0；</p>
+<p>（3）无线性相关：r=0。</p>
+<p>​    如果变量Y与X间是函数关系，则r=1或r=-1；如果变量Y与X间是统计关系，则-1&lt;r&lt;1。</p>
+<p>（4）r的计算有三种：</p>
+<p>​        ①Pearson相关系数：对定距连续变量的数据进行计算。</p>
+<p>​        ②Spearman和Kendall相关系数：对分类变量的数据或变量值的分布明显非正态或分布不明时，计算时先对离散数据进行排序或对定距变量值排（求）秩。</p>
+<p>​        实际上，对任何类型的变量，都可以使用相应的指标进行相关分析。也就是，有各种参数，对适合它们的变量进行分析。</p>
+<h4 id="二、相关系数的数学模型"><a href="#二、相关系数的数学模型" class="headerlink" title="二、相关系数的数学模型"></a>二、相关系数的数学模型</h4><p><strong>皮尔森相关系数</strong></p>
+<p>​        皮尔森相关系数（Pearson correlation coefficient）也叫皮尔森积差相关系数（Pearson product-moment correlation coefficient），是用来反应两个变量相似程度的统计量。或者说可以用来计算两个向量的相似度（在基于向量空间模型的文本分类、用户喜好推荐系统中都有应用）。</p>
+<p>​        皮尔森相关系数计算公式如下：</p>
+<p><img src="1559998024122.png" alt="1559998024122"></p>
+<p>​        分子是协方差，分母是两个变量标准差的乘积。显然要求X和Y的标准差都不能为0。</p>
+<p>​        <del>当两个变量的线性关系增强时，相关系数趋于1或-1。正相关时趋于1，负相关时趋于-1。当两个变量独立时相关系统为0，但反之不成立。比如对于$y=x2$，X服从[-1,1]上的均匀分布，此时E(XY)为0，E(X)也为0，所以$ρX,Y=0$，但x和y明显不独立。所以“不相关”和“独立”是两回事。当Y 和X服从联合正态分布时，其相互独立和不相关是等价的。</del></p>
+<p>​        对于居中的数据来说（何谓居中？也就是每个数据减去样本均值，居中后它们的平均值就为0），E(X)=E(Y)=0，此时有：</p>
+<p><img src="1559998038567.png" alt="1559998038567"></p>
+<p>​        即相关系数可以看作是两个随机变量中得到的样本集向量之间夹角的cosine函数。</p>
+<p>​        进一步当X和Y向量归一化后，$||X||=||Y||=1$，相关系数即为两个向量的乘积$ρX,Y=X∙YρX,Y=X∙Y$。</p>
+<h4 id="三、偏相关系数"><a href="#三、偏相关系数" class="headerlink" title="三、偏相关系数"></a>三、偏相关系数</h4><p>​        “偏相关”过程计算偏相关系数，该系数在控制一个或多个附加变量的效应的同时描述两个变量之间的线性关系。相关是线性相关性测量。两个变量可以完全相关，但如果关系不是线性的，那么相关系数就不是适合度量它们相关性的统计。</p>
+<p>​        <strong>示例</strong>。在保健基金和发病率之间存在关系吗？尽管您可能希望此类关系都是负相关关系，但研究表明存在显著的正相关关系：随着保健基金的增长，发病率也表现为增长。不过，对保健提供商的拜访率的控制，实际上消除了所观察到的正相关。保健基金和发病率显示为正相关的原因仅仅是：当基金增长时，更多的人可以获得保健服务，从而导致医生和医院所报告的病例更多。</p>
+<p>数学模型</p>
+<p><img src="1559998056116.png" alt="1559998056116"></p>
+<p><img src="1559998069827.png" alt="1559998069827"></p>
+<p>偏相关系数的检验</p>
+<p><img src="1559998082865.png" alt="1559998082865"></p>
+<h4 id="四、SPSS应用"><a href="#四、SPSS应用" class="headerlink" title="四、SPSS应用"></a>四、SPSS应用</h4><p>参数设置</p>
+<p><img src="1559998091912.png" alt="1559998091912"></p>
+<p>散点图</p>
+<p><img src="1559998105692.png" alt="1559998105692"></p>
+<p>结果分析</p>
+<p><img src="1559998115773.png" alt="1559998115773"></p>
+<p>Health care funding和Reported diseases 的零阶相关系数为0.737，显著性水平为0.000，是相关的。但是其一阶相关系数为0.013，显著性水平为0.928，远大于0.05，所以相关关系并不显著。</p>
+<p>所以这两个变量之间不可以简单的判断是否具有相关关系</p>
+<p> <strong>补充：</strong></p>
+<p>协方差计算：</p>
+<p><img src="1559998125942.png" alt="1559998125942"></p>
+<p>显著性解释：</p>
+<p>可以理解为概率，就是得出错误结论的概率，该概率越大犯错的可能性就越大。所以我们要求显著性水平在0.05一下，因为5%可以被认为是小概率事件</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Donate comment here</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/reward_pic/wechatpay.jpg" alt="不说 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/reward_pic/alipay.jpg" alt="不说 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/相关-spss/" rel="tag"># 相关, spss</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/05/《深入浅出统计学》总结/" rel="next" title="《深入浅出统计学》总结">
+                <i class="fa fa-chevron-left"></i> 《深入浅出统计学》总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/06/安装hexo速度慢的解决方法/" rel="prev" title="安装hexo速度慢的解决方法">
+                安装hexo速度慢的解决方法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/upload/avatar.png" alt="不说">
+            
+              <p class="site-author-name" itemprop="name">不说</p>
+              <p class="site-description motion-element" itemprop="description">No mistakes in the tango, not like life.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、先来看相关度（双变量）"><span class="nav-number">1.</span> <span class="nav-text">一、先来看相关度（双变量）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、相关系数的数学模型"><span class="nav-number">2.</span> <span class="nav-text">二、相关系数的数学模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、偏相关系数"><span class="nav-number">3.</span> <span class="nav-text">三、偏相关系数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四、SPSS应用"><span class="nav-number">4.</span> <span class="nav-text">四、SPSS应用</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">不说</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 本站总访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2019/06/06/相关分析以及偏相关分析的数学模型及SPSS应用/';
+          this.page.identifier = '2019/06/06/相关分析以及偏相关分析的数学模型及SPSS应用/';
+          this.page.title = '相关性分析以及偏相关分析的数学模型及spss应用';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'KttlvzrhKtijAQb2YlpDCAvy-gzGzoHsz',
+        appKey: 'TKq6G6mRYxnokzgm8BPnA3Bo',
+        placeholder: 'ヾﾉ≧∀≦)o 来呀！造作呀！~',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="统计学, 笔记,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1、集中趋势的度量 均值  $\mu = \frac{\sum x}{n}$。 频数 $\mu = \frac {\sum fx}{f}$, f是频数。  中位数：1）排列组合为奇数时，$(n+1)/2 $；2）为偶数时，为两个中间数相加除以2。  众数  2、分散性与变异性的量度 全距：上界-下届 (最大值 — 最小值) 展示数据分布的一种简单情况，但有局限性 容易受异常值（大或小）的影响">
+<meta name="keywords" content="统计学, 笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《深入浅出统计学》总结">
+<meta property="og:url" content="http://yoursite.com/2019/06/05/《深入浅出统计学》总结/index.html">
+<meta property="og:site_name" content="不说 · Blog">
+<meta property="og:description" content="1、集中趋势的度量 均值  $\mu = \frac{\sum x}{n}$。 频数 $\mu = \frac {\sum fx}{f}$, f是频数。  中位数：1）排列组合为奇数时，$(n+1)/2 $；2）为偶数时，为两个中间数相加除以2。  众数  2、分散性与变异性的量度 全距：上界-下届 (最大值 — 最小值) 展示数据分布的一种简单情况，但有局限性 容易受异常值（大或小）的影响">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-06-08T16:33:16.983Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《深入浅出统计学》总结">
+<meta name="twitter:description" content="1、集中趋势的度量 均值  $\mu = \frac{\sum x}{n}$。 频数 $\mu = \frac {\sum fx}{f}$, f是频数。  中位数：1）排列组合为奇数时，$(n+1)/2 $；2）为偶数时，为两个中间数相加除以2。  众数  2、分散性与变异性的量度 全距：上界-下届 (最大值 — 最小值) 展示数据分布的一种简单情况，但有局限性 容易受异常值（大或小）的影响">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/06/05/《深入浅出统计学》总结/">
+
+
+
+
+
+  <title>《深入浅出统计学》总结 | 不说 · Blog</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f58d624f18cbd91beca33213279a5cf3";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">不说 · Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Now I have come to the crossroads in my life. I always knew what the right path was. Without exception, Iknew. But I never took it,you knew why? It was too damn hard!         —— 《闻香识女人》</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/05/《深入浅出统计学》总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="不说">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/upload/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不说 · Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">《深入浅出统计学》总结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-05T00:00:00+08:00">
+                2019-06-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/统计分析/" itemprop="url" rel="index">
+                    <span itemprop="name">统计分析</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/06/05/《深入浅出统计学》总结/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/06/05/《深入浅出统计学》总结/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="1、集中趋势的度量"><a href="#1、集中趋势的度量" class="headerlink" title="1、集中趋势的度量"></a>1、集中趋势的度量</h3><ul>
+<li>均值  $\mu = \frac{\sum x}{n}$。</li>
+<li><p>频数 $\mu = \frac {\sum fx}{f}$, f是频数。</p>
+</li>
+<li><p>中位数：1）排列组合为奇数时，$(n+1)/2 $；2）为偶数时，为两个中间数相加除以2。</p>
+</li>
+<li>众数</li>
+</ul>
+<h3 id="2、分散性与变异性的量度"><a href="#2、分散性与变异性的量度" class="headerlink" title="2、分散性与变异性的量度"></a>2、分散性与变异性的量度</h3><ul>
+<li><strong>全距</strong>：上界-下届 (最大值 — 最小值)<ul>
+<li>展示数据分布的一种简单情况，但有局限性</li>
+<li>容易受异常值（大或小）的影响</li>
+</ul>
+</li>
+<li><p>四分位数：将数据从小到大排列后一分为四</p>
+<ul>
+<li><p>下四分位数Q1</p>
+<ul>
+<li>n/4=整数，则Q1为n/4这个位置与上一个数字的平均值<ul>
+<li>n/4=不为整数，则Q1取n/4的向上取整</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>上四分位数Q2</p>
+<ul>
+<li>3n/4=整数，则Q1为3n/4这个位置与上一个数字的平均值</li>
+<li>3n/4=不为整数，则Q1取3n/4的向上取整</li>
+</ul>
+</li>
+<li><p><strong>四分位距=上四分位数-下四分位数</strong></p>
+<ul>
+<li>优点：较少受到异常值的影响，剔除异常值</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>百分位数：第K百分位数即位于数据范围k%的位置的数值Pk</p>
+<ul>
+<li>优点：对于划分档次非常有用</li>
+<li><p>计算百分位距与四分位数一样，k(n/100)</p>
+<ul>
+<li>若为整数，则取该位置数与上一个数取平均值</li>
+<li>若为小数，则向上整数值，则该数值即为百分位数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>箱线图：能在同一张图上体现多个距和四分位数<ul>
+<li>箱：上下四分位数和四分位距</li>
+<li>线：上下界</li>
+<li>优点：能够体现多个数据，非常有利于比较</li>
+</ul>
+</li>
+<li>方差：量度数据分散性的一种方法，是数值与均值距离的平方数的平均值<ul>
+<li>$\sigma^2 = \frac{\sum(x-\mu)^2}{n}$</li>
+<li><strong>方差速算</strong>（另一种较为简便的算法）：$\sigma ^2 = \frac{\sum x^2}{n}-\mu^2$</li>
+</ul>
+</li>
+<li>标准差：方差的开方<ul>
+<li>优点：度量数值与平均数之间的距离，最小值为0</li>
+<li>$\sigma = \sqrt{\sigma ^2}$</li>
+</ul>
+</li>
+<li>标准分:  标准分是利用均值和标准差，将一个数据集中的各个数据转化为更通用的分布形态，同时确保数据的基本形态形状不变<ul>
+<li>$z = \frac{x-\mu}{\sigma}$</li>
+<li>是对不同数据集的数值进行比较的方法</li>
+<li>标准化后均值为0，标准差为1</li>
+</ul>
+</li>
+</ul>
+<h3 id="3、概率"><a href="#3、概率" class="headerlink" title="3、概率"></a>3、概率</h3><ul>
+<li><p>事件概率：$p(A)=n(A)/n$，分为独立事件和相关事件</p>
+<ul>
+<li>相关事件下的互立事件：发生A则不发生B，$p(A)+p(B)=1$</li>
+<li>独立事件：相互平行的，$P(A|B)=P(A),P(AB)=P(A)*P(B)$</li>
+</ul>
+</li>
+<li><p><strong>条件概率</strong>：$P(B|A)=P(AB)/P(A)$</p>
+</li>
+<li><p><strong>全概率公式</strong>：根据条件概率，事件A或者B的概率</p>
+<ul>
+<li>$P(B)=P(B|A’)<em>P(A’)+P(B|A)</em>P(A)$</li>
+</ul>
+</li>
+<li><p><strong>贝叶斯定律</strong>：根据条件概率和全概率，逆向求条件概率</p>
+<ul>
+<li>$P(A|B)=P(B|A)<em>P(A)/[P(B|A’)</em>P(A’)+P(B|A)*P(A)]$</li>
+</ul>
+</li>
+<li><p>以上全概率和贝叶斯概率，尤其是后者，画概率树最好使。</p>
+</li>
+</ul>
+<h3 id="4、期望"><a href="#4、期望" class="headerlink" title="4、期望"></a>4、期望</h3><p><strong>概率分布</strong>：描述一个给定变量给出的所有可能的结果</p>
+<ul>
+<li><p>一个随机变量X期望等于我们所期望的长期平均值，用$E(X)$或者u表示</p>
+</li>
+<li><p>期望：$E(X) = \sum xP(X=x)$</p>
+<ul>
+<li>X的函数的期望，$E(f(X))=\sum f(x)P(X=x)$</li>
+</ul>
+</li>
+<li><p>方差：$Var(X)=E(X-μ)²$</p>
+</li>
+<li><p>标准差： $\sigma=\sqrt{Var(X)}$</p>
+</li>
+<li><p>线性变换： eg：一台老虎机增大了赌本</p>
+<ul>
+<li>在变量中增加一个常数不过是将概率分布移动一下，分布形状不变</li>
+<li>$E(aX+b)=aE(X)+b$</li>
+<li>$Var(aX+b)=a²Var(X)$</li>
+</ul>
+</li>
+<li><p>独立观测值：一个事件的结果是一个独立观测值，几个互不影响的事件的结果称为独立观测值 eg：老虎机每一次拉杆为一个独立观测值</p>
+<ul>
+<li>X的独立观测值与X不同，每个独立观测值都具有相同的概率分布，但结果不一样</li>
+<li>$X₁、X₂、…、Xn$是X的独立观测值</li>
+<li>$E(X₁+X₂+…+Xn)=nE(X)$</li>
+<li>$Var(X₁+X₂+…+Xn)=nVar(X)$</li>
+</ul>
+</li>
+<li><p>独立随机变量：如果X和Y是独立随机变量 eg：两台老虎机</p>
+<ul>
+<li>$E(X±Y)=E(X)±E(Y)$</li>
+<li>$Var(X±Y)=Var(X)+Var(Y)$</li>
+<li>线性变化</li>
+<li>$E(aX±bY)=aE(X)±bE(Y)$</li>
+<li>$Var(aX±bY)=a²Var(X)+b²Var(Y)$</li>
+</ul>
+</li>
+</ul>
+<h3 id="5、排列组合"><a href="#5、排列组合" class="headerlink" title="5、排列组合"></a>5、排列组合</h3><ul>
+<li><p>排位方式的计算公式</p>
+<ul>
+<li>如果要求N各对象的 可能排位方式的数目，则计算：<ul>
+<li>$n! = n<em>(n-1)</em>…<em>3</em>2*1$</li>
+<li>也就是说，将从n到1的数字全部相乘</li>
+<li>如果n个对象昨圆形排位，则可能的排位方式数目是$(n-1)!$</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>排列是指从一个较大（n个）对象群体中取出一定数目（r个）对象进行排序，并得出排序方式总数目</p>
+<ul>
+<li>$P_r^n = \frac{n!}{(n-r)!}$</li>
+<li>排列指从群体中选取几个对象，在<strong>考虑这几个对象的顺序</strong>的情况下，求出这几个对象的选取方式的数目</li>
+<li>也即：排列与顺序有关</li>
+</ul>
+</li>
+<li><p>组合指从一个群体中选取几个对象，在<strong>不考虑这几个对象的顺序</strong>的情况下，求出这几个对象的选取方式的数目</p>
+<ul>
+<li>$C_r^n = \frac{n!}{r!(n-r)!}$</li>
+<li>组合是与顺序无关的</li>
+</ul>
+</li>
+</ul>
+<h3 id="6、几何分布、二项式分布及泊松分布"><a href="#6、几何分布、二项式分布及泊松分布" class="headerlink" title="6、几何分布、二项式分布及泊松分布"></a>6、几何分布、二项式分布及泊松分布</h3><h4 id="几何分布"><a href="#几何分布" class="headerlink" title="几何分布"></a>几何分布</h4><ul>
+<li><p>何时使用</p>
+<ul>
+<li>进行一系列独立试验</li>
+<li>每次实验都存在成功或者失败的可能</li>
+<li>主要想知道的是为了取得第一次成功需要实验多少次</li>
+</ul>
+</li>
+<li><p>如果符合几何分布条件，则：<strong>X~Geo(p)</strong> ,<em>p代表单次实验的成功率，q=1-p，X是为了获得第一次成功进行实验的次数</em></p>
+</li>
+<li><p>概率</p>
+<ul>
+<li>在第r次试验时取得第一次成功的概率：$P(X=r) = q^{r-1}p$</li>
+<li>需要进行r次以上实验（失败）才能取得第一次成功的概率：$P(X&gt;r)= q^r$</li>
+<li>需要进行r次或不到r次实验即能取得第一次成功的概率：$P(X≤r)=1-q^r$</li>
+</ul>
+</li>
+<li><p>方差和期望</p>
+<ul>
+<li>$E(X)= \frac{1}{p}$</li>
+<li>$Var(X)= \frac{q}{p²}$</li>
+</ul>
+</li>
+</ul>
+<h4 id="二项式分布"><a href="#二项式分布" class="headerlink" title="二项式分布"></a>二项式分布</h4><ul>
+<li><p>何时使用</p>
+<ul>
+<li>进行一系列次数有限的独立试验</li>
+<li>每次实验都存在成功或者失败的可能</li>
+<li>主要想知道的是成功或失败的次数</li>
+</ul>
+</li>
+<li><p>如果符合二项式分布，则：<strong>X~B(n,p)</strong> p代表单次实验的成功率，q=1-p，n为实验次数，X为在n次实验中取得的成功次数</p>
+</li>
+<li><p>概率</p>
+<ul>
+<li>$P(X=r)=ⁿC_{r}× p^r × q^{n-r}$</li>
+<li>其中$ⁿC_{r}= \frac{n!}{r!(n-r)!}$</li>
+</ul>
+</li>
+<li><p>方差和期望</p>
+<ul>
+<li>$E(X)=np$</li>
+<li>$Var(X)=npq$</li>
+</ul>
+</li>
+</ul>
+<h4 id="泊松分布"><a href="#泊松分布" class="headerlink" title="泊松分布"></a><strong>泊松分布</strong></h4><ul>
+<li>何时使用</li>
+<li><p>单个事件在给定区间内随机、独立地发生</p>
+<ul>
+<li>已知给定区间内的事件平均发生次数，或者叫发生率，且这个次数或发生率是有限的</li>
+<li>主要想知道的是给定区间内的发生次数</li>
+</ul>
+</li>
+<li><p>如果符合泊松分布，则：<strong>X~Po(λ)</strong>  λ代表发生率，X表示给定区间内的事件发生次数，</p>
+</li>
+<li><p>概率</p>
+<ul>
+<li>$P(X=r)= \frac{e^{λ}λ^r}{r!}$</li>
+</ul>
+</li>
+<li><p>方差和期望</p>
+<ul>
+<li>$E(X)=λ$</li>
+<li>$Var(X)=λ$</li>
+</ul>
+</li>
+<li><p>如果$X \sim Po(λx)$，$Y\sim Po(λy)$，且X和Y是独立的，则：$X+Y\sim Po(λx+λy)$</p>
+</li>
+<li><p>如果$X\sim B(n,p)$，其中n足够大（比如大于50），p足够小（比如小于0.1），则可以将二项分部近似看作泊松分布$X\sim Po(np)$</p>
+</li>
+</ul>
+<h3 id="7、正态分布的应用：保持正态"><a href="#7、正态分布的应用：保持正态" class="headerlink" title="7、正态分布的应用：保持正态"></a>7、正态分布的应用：保持正态</h3><ul>
+<li><p>离散型概率分布：前面讲到的都是离散数据，即数据是由一个个的数值组成，其中每个数值都有相应的概率。</p>
+</li>
+<li><p>连续性概率分布：连续数据往往通过测量得到，而不是通过计数得到，测量结果在很大程度上取决于测量精度的要求。</p>
+<ul>
+<li>连续概率分布：用概率密度函数进行描述</li>
+<li>计算一个数值范围内的概率：$P(a&lt;x&lt;b）=a到b与f(x)组成的面积$</li>
+<li>概率密度函数下方的总面积必须等于1.</li>
+<li>正态分布<ul>
+<li>$X\sim N(\mu,\sigma2)$</li>
+<li>计算某一数值的正态分布概率，需要进行标准化，$\frac{X-\mu}{\sigma}$ ,进而查出概率分布，通过表格 $X\sim N(0,1)$ 的正太分布规律。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>再谈正态分布的运用：超越正态</strong></p>
+</blockquote>
+<p>体重，身高之类的数据属于连续性数据，往往符合正态分布，而他们的综合数据（加或者减也都符合正态分布，这时候就需要用到之前学到的离散型数据的公式计算连续性数据综合数据）</p>
+<ul>
+<li><strong>超越正态1—n个独立变量的综合数据计算</strong></li>
+<li><p>$X\sim N(\mu_{X},\sigma_{X}^{2})$ ,$Y\sim N(\mu_{Y},\sigma_{Y}^{2})$为两个独立变量</p>
+<ul>
+<li>线性变化：影响概率分布中的基本数值，例如，如果你有一根特定长度的绳子，那么，进行线性变化会影响绳子的长度。如果基本数据发生变化，则所面对的就是变换<ul>
+<li>$X\sim N(\mu,\sigma^{2})\rightarrow aX+b\sim N(a\mu+b,a^{2}\sigma^{2})$</li>
+</ul>
+</li>
+<li><p>独立观察结果：影响所处理事件的数量，例如，如果一段绳子有n个独立观察的结果，则所讨论的就是n段绳子。如果数量发生变化，则面对的就是独立变量</p>
+<ul>
+<li>$X+Y\sim N(\mu_{X}+\mu_{Y},\sigma_{X}^{2}+\sigma_{Y}^{2})$</li>
+<li><p>$X-Y\sim N(\mu_{X}-\mu_{Y},\sigma_{X}^{2}+\sigma_{Y}^{2})$</p>
+</li>
+<li><p>如果$X1,X2,X3…Xn$为独立观察结果，且 $X\sim N(\mu,\sigma2)$</p>
+<ul>
+<li>$X_{1}+X_{2}+X_{3}+…+X_{n}\sim N(n\mu,n\sigma2)$</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>超越正态2—正态分布近似代替二项式分布（B-N(n,p)）</strong></p>
+</blockquote>
+<p><em>条件：如果np和nq双双大于5时，可以用正态分布近似代替二项分布，即</em> $X\sim N(np,npq)$ *;如果n&gt;50且p&lt;0.1,则可以使用泊松分布代替二项分布。</p>
+<p><strong>记住：利用正态分布代替二项分布时候，必须进行连续性修正。</strong></p>
+<ul>
+<li><p>求解过程：</p>
+<ul>
+<li>求解均值和方差：B-N(n,p)，均值np，方差npq；</li>
+<li><p>转化成 $X\sim N(np,npq)$</p>
+</li>
+<li><p>利用标准分计算概率</p>
+</li>
+<li><p>问题：需要进行修整，因为正态分布是连续性数据，而二项式分布是离散型数据，才能确保正确的结果。</p>
+<ul>
+<li>$\leq$ 型概率求解：$P（X \leq a） \rightarrow$ 实际计算正态分布下的P（X &lt;a+0.5）</li>
+<li>$\geq$型概率求解：$P（X \geq b）\rightarrow$ 实际计算正态分布下的P（X &gt; b-0.5）</li>
+<li>介于型概率求解：$P（ a\leq X \leq b）\rightarrow$ 实际计算正态分布下的P（ a-0.5&lt; X &lt; b+0.5）</li>
+<li>X=a概率性求解：$P（X=a）\rightarrow$ 实际计算正态分布下的P（ a-0.5&lt; X &lt; a+0.5）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>超越正态3—正态分布近似代替泊松分布$（X-P0(\lambda)）$</strong></p>
+</blockquote>
+<p><em>条件：如果$X \sim P0(\lambda)$且$\lambda &gt;15$,则可以使用正态分布代替泊松分布，$X\sim N(\lambda,\lambda)$</em></p>
+<p><strong>但是：别忘记进行连续性修正，修正方式与上述二项式分布类似。</strong></p>
+<h3 id="8、统计抽样"><a href="#8、统计抽样" class="headerlink" title="8、统计抽样"></a>8、统计抽样</h3><ul>
+<li><p>总体和样本</p>
+</li>
+<li><p>抽取样本</p>
+<ul>
+<li>简单随机抽样：重复抽样和不重复抽样</li>
+<li>分层抽样：分好层后再进行简单随机抽样</li>
+<li>整群抽样</li>
+<li>系统抽样</li>
+</ul>
+</li>
+</ul>
+<h3 id="9、总体和样本的估计：进行预测"><a href="#9、总体和样本的估计：进行预测" class="headerlink" title="9、总体和样本的估计：进行预测"></a>9、总体和样本的估计：进行预测</h3><ul>
+<li><p>估计总体均值：样本均值（ $\bar{x}$）被称为总体均值（ $\mu$ ）的<strong>点估计量</strong>（$\bar{\mu}$ ）</p>
+</li>
+<li><p>估计总体方差：$\bar{\sigma^{2}}=s^{2}=\frac{\sum_{a}^{b}{（X-\bar{X}）^{2}}}{n-1}$</p>
+</li>
+<li><p>预测总体比例： $\bar{p}=\frac{成功样本}{总体样本}$</p>
+</li>
+<li><p><strong>比例的抽样分布</strong>：从一个总体中取得所有大小为n的可能样本，由这些样本的比例形成一个分布，形成比例的抽样分布。我们用 $P_{s}$ 代表样本比例随机变量</p>
+<ul>
+<li><p>$P_{s}$ 的期望和方差定义：</p>
+<ul>
+<li>$E（P_{s}）=p$</li>
+<li>$Var（P_{s}）=pq/n$</li>
+<li>$比例标准误差= \sqrt{Var(ps)}$</li>
+<li>其中，p指的是总体中某一性质的变量所占的总体比例,n指的是样本总量</li>
+</ul>
+</li>
+<li><p>如果n&gt;30，则 $P_{s}$ 符合正态分布，于是 $P_{s}\sim N(p,pq/n)$ ,但是需要进行连续性修正，即上述进行修正的时候的0.5变成+-1/2n</p>
+<ul>
+<li>$P(P_{s}\geq0.4) = P(P_{s}\geq(0.4-\frac{1}{2*n}))$ </li>
+<li>$P(P_{s}\leq0.4) = P(P_{s}\leq(0.4+\frac{1}{2*n}))$</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>均值的抽样分布</strong>：样本均值分布</p>
+<ul>
+<li><p>首先：总体X分布，X的均值为 $\mu$ ，方差为 $\sigma^{2}$，因此$E（X）= \mu$，$Var(X)= \sigma^{2}$</p>
+</li>
+<li><p>其次：用来自 总体X的所有大小为n的可能样本，形成所有样本均值的分布—— $\bar{X}$的分布，这个分布的均值和方差如下：</p>
+<ul>
+<li>$E（X）= \mu$</li>
+<li>$Var(X)= \sigma^{2}/n$</li>
+<li>$均值标准误差= \sigma/\sqrt{n}$</li>
+<li>n越大，均值标准误差越小，样本个体数越多，作为总体均值的估计量的样本均值越可靠。</li>
+</ul>
+</li>
+<li><p>计算样本均值 $\bar{X}$的分布：</p>
+<ul>
+<li><p>若总体X符合正态分布，则无论样本n有多大，均值的分布都符合正态分布：</p>
+<ul>
+<li>$\bar{X}\sim N（\mu，\frac{\sigma^{2}}{n}）$</li>
+</ul>
+</li>
+<li><p>若总体X不符合正态分布，则样本n较大时候，可以认为X符合正态分布 $\bar{X}$ 的分布近似正态分布，即中心极限定理。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>中心极限定理</strong>：如果从一个非正正态总体X取出一个样本，且样本很大，则 $\bar{X}$的分布近似正态分布，即：总体X分布，X的均值为 $\mu$，方差为 $\sigma^{2}$，且样本n很大时候：</p>
+<ul>
+<li><p>$\bar{X}\sim N（\mu，\frac{\sigma^{2}}{n}）$</p>
+<ul>
+<li><p>二项分布： $X\sim N(n,p)$ , 均值： $mu=np$;方差：$\sigma^{2}=npq$; 当n&gt;30,根据中心极限定理 $\bar{X}\sim N（np，pq）$</p>
+</li>
+<li><p>泊松分布：$ X\sim N(n,p) $,$\mu=\sigma^{2}=\lambda$;当当n&gt;30,根据中心极限定理$\bar{X}\sim N（\lambda，\frac{\lambda}{n}）$</p>
+</li>
+<li><p>最后，按照正态分布标准化算法计算概率</p>
+</li>
+</ul>
+<p><strong>注意：中心极限定理不需要进行修正</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="10、置信区间的构建：自信地猜测"><a href="#10、置信区间的构建：自信地猜测" class="headerlink" title="10、置信区间的构建：自信地猜测"></a>10、置信区间的构建：自信地猜测</h3><blockquote>
+<p><strong>当n较大，可以近似看成是正态分布</strong></p>
+</blockquote>
+<ul>
+<li><p>$\mu$的置信区间： $p(a&lt;\mu&lt;b)=0.95$,总体均值介于a和b之间，则（a,b）被称为置信区间</p>
+<ul>
+<li><p>1、选择总体统计量：总体均值E(X)= $\mu$，总体方差为 $Var(X)=\sigma^{2}$</p>
+<ul>
+<li><p>2、求出所选统计量的抽样分布：均值的抽样分布，其均值为$E( \bar{X} )= \mu$ ,均值方差为$Var( \bar{X})=\sigma^{2}/n$</p>
+<ul>
+<li>问题是：总体方差 $\sigma^{2}$未知，因此需要样本方差$S^{2}$来代替<ul>
+<li>因此可以求出均值抽样分布： $\bar{X}\sim N（\mu，\frac{S^{2}}{n}）$</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>3、决定置信水平：一般是0.90或者0.95</p>
+</li>
+<li><p>4、求出置信上下限：标准化计算 ： $Z=\frac{\bar{X}-\mu}{s/\sqrt{n}}\sim N(0,1)$ ,查表得到置信区间对应值，则就可以改写成 $\mu$关于 $\bar{X}$的范围值，其中 $\bar{X}$是样本计算的均值 $\bar{x}$</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>当n较小，可以近似看成是t分布</strong></p>
+</blockquote>
+<ul>
+<li><p>1、选择总体统计量</p>
+</li>
+<li><p>2、均值抽样分布 $\bar{X}$的概率分布：$T \sim t(v)$ ,其中 v是自由度=n-1,n为选取的样本数</p>
+<ul>
+<li>t分布的标准分： $T=\frac{\bar{X}-\mu}{s/\sqrt{n}}$</li>
+</ul>
+</li>
+<li><p>3、决定置信水平：置信水平能得出标准分下的T的上下限值所对应的范围，根据置信概率和自由度v来确定值。</p>
+</li>
+<li><p>4、求出置信上下限：即 $\mu$的范围。</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>无论求置信区间是正态分布还是t分布，不可缺少的是确定该样本符合什么类型的分布，二项式分布，泊松分布，还是等等，这样有利于得出方差$\sigma^{2}$ 是何值</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>有两种估计总体统计量的方法</strong></p>
+</blockquote>
+<ul>
+<li>使用点估计量：可估计精确数值</li>
+<li>使用总体统计量的置信区间，得到一个有较高可信度的数值范围</li>
+</ul>
+<h5 id="置信区间简便算法"><a href="#置信区间简便算法" class="headerlink" title="置信区间简便算法"></a><strong>置信区间简便算法</strong></h5><table>
+<thead>
+<tr>
+<th>总体统计量</th>
+<th>总体分布</th>
+<th>条件</th>
+<th>置信区间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\mu $</td>
+<td>正态</td>
+<td>$\sigma^2$已知<br>n可大可小<br>$\bar{x}$为样本均值</td>
+<td>$({\bar{x}}-c\frac{\sigma}{\sqrt{n}},\bar{x}+c\frac{\sigma}{\sqrt{n}})$</td>
+</tr>
+<tr>
+<td>$\mu $</td>
+<td>非正态</td>
+<td>$\sigma^2$已知<br>n很大（至少30）<br>$\bar{x}$为样本均值</td>
+<td>$({\bar{x}}-c\frac{\sigma}{\sqrt{n}},\bar{x}+c\frac{\sigma}{\sqrt{n}})$</td>
+</tr>
+<tr>
+<td>$\mu $</td>
+<td>正态或非正态</td>
+<td>$\sigma^2$未知<br>n很大（至少30）<br>$\bar{x}$为样本均值<br>$s^2$为样本方差</td>
+<td>$({\bar{x}}-c\frac{s}{\sqrt{n}},\bar{x}+c\frac{s}{\sqrt{n}})$</td>
+</tr>
+<tr>
+<td>p</td>
+<td>二项</td>
+<td>n很大<br>$p_s$为样本比例<br>$q_s$等于$1-p_s$</td>
+<td>$({p_s}-c\sqrt{\frac{p_sq_s}{n}},{p_s}+c\sqrt{\frac{p_sq_s}{n}})$</td>
+</tr>
+</tbody>
+</table>
+<h5 id="置信水平经验值"><a href="#置信水平经验值" class="headerlink" title="置信水平经验值"></a><strong>置信水平经验值</strong></h5><table>
+<thead>
+<tr>
+<th>置信水平</th>
+<th>C值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>90%</td>
+<td>1.64</td>
+</tr>
+<tr>
+<td>95%</td>
+<td>1.96</td>
+</tr>
+<tr>
+<td>99%</td>
+<td>2.58</td>
+</tr>
+</tbody>
+</table>
+<h3 id="11、假设检验的运用：研究证据"><a href="#11、假设检验的运用：研究证据" class="headerlink" title="11、假设检验的运用：研究证据"></a>11、假设检验的运用：研究证据</h3><p>假设检验6步骤：</p>
+<ul>
+<li><p>1）确定要进行检验的假设</p>
+<ul>
+<li>H0：原假设即你要对其进行检验的断言，除非有足够的证据进行反驳，否则你将接受这个断言</li>
+<li>H1：备择假设即在拒绝H0之后将接受的另一个断言</li>
+<li><strong>进行假设检验时，你假定原假设为真；如果有足够的证据反驳原假设，则拒绝原假设，接受备择假设</strong></li>
+</ul>
+</li>
+<li>2）选择检验统计量</li>
+<li><ul>
+<li>检验统计量：即用于对假设进行检验的统计量，是与该检验关系最为密切的统计量</li>
+</ul>
+</li>
+<li>3）确定拒绝域</li>
+<li><ul>
+<li>显著性水平：希望在样本结果的不可能程度达到多达时，就拒绝原假设H0。</li>
+<li>单尾检验：检验的拒绝域落在可能的数据集的一侧</li>
+<li>双尾检验：拒绝域一分为二在数据集的两侧</li>
+</ul>
+</li>
+<li>4）求出p值</li>
+<li>5）样本结果位于拒绝域中吗</li>
+<li>6）作出判断</li>
+</ul>
+<p>案例：</p>
+<p>某药物厂家声明某新药物的治愈率可达90%。医生对新药物的实验结果：</p>
+<table>
+<thead>
+<tr>
+<th>是否治愈？</th>
+<th>是</th>
+<th>否</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>频数</td>
+<td>80</td>
+<td>20</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>第一步：确定假设</p>
+<ul>
+<li>H0：药物治愈率达到90%，即 p = 0.9</li>
+<li>H1：药物治愈率低于90%，即 p&lt; 0.9</li>
+</ul>
+</li>
+<li><p>第二步：选择检验统计量</p>
+<ul>
+<li>样本中的患者数量是100，治愈的患者的概率为0.9，服从二项分布。即：X ~ B(100, 0.9)</li>
+<li>而计算量大，我们可以用正态分布进行代替，其中n=100，p=0.9。（由于n很大，且np和nq都大于5，因此检验统计量服从 X ~ N(90, 9)</li>
+<li>标准化 $z = \frac{x-90}{\sqrt{9}}$， z ~ N(0, 1)</li>
+</ul>
+</li>
+<li><p>第三步：确定拒绝域</p>
+<ul>
+<li>由于备择假设p &lt; 0.9，表明拒绝域在左尾</li>
+<li>以5%为拒绝域，查标准正态分布，临界值c等于$P(Z &lt; c) = 0.05$，即$ c = -1.64$</li>
+<li>说明只要检验统计量小于-1.64，我们就有足够的证据拒绝原假设</li>
+</ul>
+</li>
+<li>第四步：求p值<ul>
+<li>拒绝域位于分布的左尾，治愈人数为80人，$Z = (X - 90)/3$，利用这些条件求P值</li>
+<li>先求80的标准分，$ z = (80 - 90)/3 = -3.33$</li>
+<li>p值算法为$P(Z &lt; z) = P(Z &lt; -3.33)$，查概率表，得：$p = 0.0004$</li>
+</ul>
+</li>
+<li>第五步：查看检验统计量是否位于拒绝域内<ul>
+<li>如果p值小于0.05，则检验统计量位于拒绝域内。由于p值等于0.0004，说明检验统计量位于拒绝域内。</li>
+</ul>
+</li>
+<li>第六步：做出决策<ul>
+<li>由于检验统计量位于假设检验的拒绝域中，说明5%显著性水平的情况下，我们有足够的证据拒绝原假设，即接受“药物治愈率低于90%”。</li>
+</ul>
+</li>
+</ul>
+<h3 id="12、-chi-2-分布"><a href="#12、-chi-2-分布" class="headerlink" title="12、$\chi^2$分布"></a>12、$\chi^2$分布</h3><p>检验统计量$\chi^2 $提供了一种对观察频数和期望频数之间的差异进行度量的办法。$\chi^2$值越小，观察频数和期望频数之间的总差值越小。</p>
+<ul>
+<li>$\chi^2 = \sum \frac{(O-E)^2}{E}$       O代表观察频数，E代表期望频数</li>
+<li><p>两个用途：</p>
+<ul>
+<li>第一是用于检验拟合优度，也就是可以检验一组给定的数据与指定分布的吻合程度；</li>
+<li>第二是检验两个变量的独立性，通过这个方法可以检查变量之间是否存在某种关联。</li>
+</ul>
+</li>
+<li><p>卡方分布：    $X^2 = \chi^2(\nu)$</p>
+<ul>
+<li>其中，$\nu$是卡方参数，自由度；</li>
+<li>卡方分布进行的检验是单尾检验，右尾被作为拒绝域；</li>
+<li>如果用显著性水平$\alpha$进行检验，则 $\chi^2 _\alpha(\nu)$ 。</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Donate comment here</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/reward_pic/wechatpay.jpg" alt="不说 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/reward_pic/alipay.jpg" alt="不说 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/统计学-笔记/" rel="tag"># 统计学, 笔记</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/05/90置信区间的理解/" rel="next" title="90置信区间的理解">
+                <i class="fa fa-chevron-left"></i> 90置信区间的理解
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/06/相关分析以及偏相关分析的数学模型及SPSS应用/" rel="prev" title="相关性分析以及偏相关分析的数学模型及spss应用">
+                相关性分析以及偏相关分析的数学模型及spss应用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/upload/avatar.png" alt="不说">
+            
+              <p class="site-author-name" itemprop="name">不说</p>
+              <p class="site-description motion-element" itemprop="description">No mistakes in the tango, not like life.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、集中趋势的度量"><span class="nav-number">1.</span> <span class="nav-text">1、集中趋势的度量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、分散性与变异性的量度"><span class="nav-number">2.</span> <span class="nav-text">2、分散性与变异性的量度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、概率"><span class="nav-number">3.</span> <span class="nav-text">3、概率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、期望"><span class="nav-number">4.</span> <span class="nav-text">4、期望</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、排列组合"><span class="nav-number">5.</span> <span class="nav-text">5、排列组合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、几何分布、二项式分布及泊松分布"><span class="nav-number">6.</span> <span class="nav-text">6、几何分布、二项式分布及泊松分布</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#几何分布"><span class="nav-number">6.1.</span> <span class="nav-text">几何分布</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二项式分布"><span class="nav-number">6.2.</span> <span class="nav-text">二项式分布</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#泊松分布"><span class="nav-number">6.3.</span> <span class="nav-text">泊松分布</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、正态分布的应用：保持正态"><span class="nav-number">7.</span> <span class="nav-text">7、正态分布的应用：保持正态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8、统计抽样"><span class="nav-number">8.</span> <span class="nav-text">8、统计抽样</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9、总体和样本的估计：进行预测"><span class="nav-number">9.</span> <span class="nav-text">9、总体和样本的估计：进行预测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10、置信区间的构建：自信地猜测"><span class="nav-number">10.</span> <span class="nav-text">10、置信区间的构建：自信地猜测</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#置信区间简便算法"><span class="nav-number">10.0.1.</span> <span class="nav-text">置信区间简便算法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#置信水平经验值"><span class="nav-number">10.0.2.</span> <span class="nav-text">置信水平经验值</span></a></li></ol></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#11、假设检验的运用：研究证据"><span class="nav-number">11.</span> <span class="nav-text">11、假设检验的运用：研究证据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12、-chi-2-分布"><span class="nav-number">12.</span> <span class="nav-text">12、$\chi^2$分布</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">不说</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 本站总访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2019/06/05/《深入浅出统计学》总结/';
+          this.page.identifier = '2019/06/05/《深入浅出统计学》总结/';
+          this.page.title = '《深入浅出统计学》总结';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'KttlvzrhKtijAQb2YlpDCAvy-gzGzoHsz',
+        appKey: 'TKq6G6mRYxnokzgm8BPnA3Bo',
+        placeholder: 'ヾﾉ≧∀≦)o 来呀！造作呀！~',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
